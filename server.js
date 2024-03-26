@@ -3,6 +3,7 @@ const readXlsxFile = require('read-excel-file/node');
 const moment = require('moment');
 const SinhVien = require('./src/models/sinhvien');
 const sinhvienRoutes = require('./src/routes/sinhvien_router');
+const subjectRoutes = require('./src/routes/subject_router');
 const bodyParser = require('body-parser');
 const db = require('./src/config/db');
 const cors = require('cors');
@@ -34,6 +35,7 @@ var listSV = new Array();
 //   }
 // })
 app.use('/sinhvien', sinhvienRoutes);
+app.use('/subject', subjectRoutes);
 
 app.listen(port, () => {
    
