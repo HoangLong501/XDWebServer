@@ -8,8 +8,8 @@ class SinhVien  {
         this.time= time;
         this.day= day;
     }
-    static getSinhVien (id_subject,callback){ 
-        db.query('select * from sinhvien join subject where sinhvien.'+id_subject+'= subject.'+id_subject , callback);
+    static getSinhVien(id_subject, callback) {
+        db.query('SELECT * FROM sinhvien INNER JOIN subject ON sinhvien.id_subject = subject.id_subject WHERE subject.id_subject = ?', [id_subject], callback);
     }
     static getAllSinhVien (callback){ 
         db.query('select * from sinhvien' , callback);
