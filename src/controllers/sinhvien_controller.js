@@ -1,8 +1,11 @@
 const SinhVien = require('../models/sinhvien');
 
 const SinhVienController ={
+  
   getSV:(req,res)=>{
-    SinhVien.getSinhVien((err,results)=>{
+    const id_subject = req.params.id_subject;
+    SinhVien.getSinhVien(id_subject,(err,results)=>{
+      
         if (err) {
             console.error('Error getting users:', err);
             res.status(500).json({ error: 'Internal Server Error' });
