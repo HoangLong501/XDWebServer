@@ -1,6 +1,17 @@
 const SinhVien = require('../models/sinhvien');
 
 const SinhVienController ={
+  getSV:(req,res)=>{
+    SinhVien.getSinhVien((err,results)=>{
+        if (err) {
+            console.error('Error getting users:', err);
+            res.status(500).json({ error: 'Internal Server Error' });
+          } else {
+            res.json(results);
+            console.log("Test log khi có req GetAllUser");
+          }
+    });
+},
     getAllSV:(req,res)=>{
         SinhVien.getAllSinhVien((err,results)=>{
             if (err) {
