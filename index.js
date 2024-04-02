@@ -14,7 +14,7 @@ const port = 4000;
 
 app.use(bodyParser.json()); // Để xử lý dữ liệu JSON
 app.use(bodyParser.urlencoded({ extended: true })); // Để xử lý dữ liệu form-urlencoded
- db.connect();
+ //db.connect();
 
 // app.use('/api',routes);
 var arrIndex = new Array();
