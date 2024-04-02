@@ -1,8 +1,7 @@
 const SinhVien = require('../models/sinhvien');
 
 const SinhVienController ={
-  
-      getSV:(req,res)=>{
+    getSV:(req,res)=>{
         const id_subject = req.params.id_subject;
         SinhVien.getSinhVien(id_subject,(err,results)=>{
             if (err) {

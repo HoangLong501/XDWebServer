@@ -1,5 +1,17 @@
 const Subject = require('../models/subject');
 const SubjectController ={
+    getSubject:(req,res)=>{
+      const id_subject = req.params.id_subject;
+      Subject.getSubject(id_subject,(err,results)=>{
+          if (err) {
+              console.error('Error getting users:', err);
+              res.status(500).json({ error: 'Internal Server Error' });
+            } else {
+              res.json(results);
+              console.log("Test log khi có req GetAllUser");
+            }
+      });
+    },
     getAllSubject:(req,res)=>{
         Subject.getAllSubject((err,results)=>{
             if (err) {

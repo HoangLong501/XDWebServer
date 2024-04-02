@@ -7,9 +7,9 @@ class Subject  {
         this.start_time= start_time;
         this.end_time= end_time;
     }
-    // static getSubject (callback){ 
-    //     db.query('select * from subject' , callback);
-    // }
+    static getSubject (id_subject,callback){ 
+        db.query('SELECT * FROM subject  WHERE id_subject = ?' ,[id_subject] ,callback);
+    }
     static getAllSubject (callback){ 
         db.query('select * from subject' , callback);
     }
