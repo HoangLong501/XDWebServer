@@ -4,10 +4,10 @@ const moment = require('moment');
 const SinhVien = require('./src/models/sinhvien');
 const sinhvienRoutes = require('./src/routes/sinhvien_router');
 const subjectRoutes = require('./src/routes/subject_router');
+const fileRoutes = require('./src/routes/file_router');
 const bodyParser = require('body-parser');
 const db = require('./src/config/db');
 const cors = require('cors');
-
 const app = express();
 app.use(cors());
 const port = 4000;
@@ -36,6 +36,8 @@ var listSV = new Array();
 // })
 app.use('/sinhvien', sinhvienRoutes);
 app.use('/subject', subjectRoutes);
+app.use('/uploadfile', fileRoutes);
+
 
 app.listen(port, () => {
    
