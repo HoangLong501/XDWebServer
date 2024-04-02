@@ -6,7 +6,7 @@ const SinhVienController = require('../controllers/sinhvien_controller');
 router.get('/', SinhVienController.getAllSV);
 router.get('/subject/:id_subject', SinhVienController.getSV);
 router.post('/', SinhVienController.createSV);
-router.put('/:mssv', SinhVienController.updateSV);
-router.delete('/:mssv', SinhVienController.deleteSV);
+router.post('/update/:mssv', SinhVienController.updateSV);
+router.post('/delete/:mssv', SinhVienController.deleteSV);
 
 module.exports = router;
