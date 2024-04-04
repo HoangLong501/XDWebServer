@@ -37,7 +37,7 @@ const SubjectController ={
       });
     },
     updateSubject: (req, res) => {
-      const mssv = req.params.mssv;
+      const mssv = req.params.id;
       const updatedSV = req.body;
       Subject.updateSubject(mssv, updatedSV, (err, result) => {
           if (err) {
@@ -50,7 +50,7 @@ const SubjectController ={
       });
   },
   deleteSubject: (req, res) => {
-      const mssv = req.params.mssv;
+      const mssv = req.params.id;
       Subject.deleteSubject(mssv, (err, result) => {
           if (err) {
               console.error('Error deleting user:', err);
