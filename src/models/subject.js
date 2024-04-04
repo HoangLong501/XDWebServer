@@ -23,7 +23,7 @@ class Subject  {
     }
 
     static deleteSubject(id_subject, callback) {
-        db.query('DELETE FROM subject WHERE id_subject = ?', id_subject, callback);
+        db.query('DELETE FROM subject WHERE id_subject = ?', [id_subject], callback);
     }
 };  
 
